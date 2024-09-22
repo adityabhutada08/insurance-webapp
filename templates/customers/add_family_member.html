@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="card mx-auto" style="max-width:525px; margin-top:40px;">
+    <article class="card-body">
+        
+        <h3>Add New Family  Member to Customer</h3> 
+<form method="post"> 
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-block">Save</button>
+</form>
+</article>
+</div>
+{% comment %} <a href="{% url 'customer_list' %}">Back to Customer List</a> {% endcomment %}
+
+
+{% endblock %}

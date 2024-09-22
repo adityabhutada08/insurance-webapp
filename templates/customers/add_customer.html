@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+    <article class="card-body">
+        
+        <div class="d-flex align-items-center">
+            <h3>Add New Customer</h3> 
+            <a href="{% url 'add_family_member' %}" class="btn btn-primary ml-3">
+                <h6>Add new Family Member</h6>
+            </a>
+        </div>
+        
+        
+<form method="post"> 
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-block">Save</button>
+</form>
+</article>
+
+</div>
+
+
+
+{% endblock %}
